@@ -1,0 +1,23 @@
+onewordkey=0
+key with spaces=0
+trailing space in key =0
+ leading space in key=0
+	 	 	      lots of leading and trailing space, including tabs   		=0
+No equals, this line should be ignored
+integer=21
+negative integer=-42
+integer with spaces = 84 
+double=4.2
+negative double=-35.1
+double with spaces= 405.4 
+boolean true=true
+BOOLEAN TRUE=TRUE
+boolean false=false
+BOOLEAN FALSE=FALSE
+true with spaces = true 
+false with spaces = false
+mixed case=TrUe
+string=some text
+string with leading and trailing=  	 Some text with leading and trailing whitespace	 		 
+string containing equals= = = = =
+= An invalid line that shouldn't be used

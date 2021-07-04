@@ -36,6 +36,21 @@ config.o: parser.tab.cc
 	$(CC) $(COMPILER_FLAGS) -c $<  $(INCLUDES)
 	$(CC) -M $(COMPILER_FLAGS) $<  $(INCLUDES) > $*.d
 
+LINKER_FLAGS = -L. -lfig
+
+TEST_PROG = test/test
+
+TEST_SRC = src/test.cpp
+
+$(TEST_PROG): $(TEST_SRC) $(OUTPUT)
+	$(CC) $(COMPILER_FLAGS) $< -o $@ $(INCLUDES) $(LINKER_FLAGS)
+	chmod +x $(TEST_PROG)
+
+.PHONY: test
+test: $(TEST_PROG)
+	cd test && ./test
+	
+
 .PHONY: clean
 clean:
-	rm parser.tab.cc *.hh lexer.conf.c $(OBJS) $(OBJS:.o=.d) $(OUTPUT)
+	rm parser.tab.cc *.hh lexer.conf.c $(OBJS) $(OBJS:.o=.d) $(OUTPUT) $(TEST_PROG)

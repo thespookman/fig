@@ -1,6 +1,7 @@
-#include "config.h"
+#include "fig.h"
 
 #include <cstring>
+#include <iostream>
 
 Value::Value (double _v) {
     v.d  = _v;
@@ -29,6 +30,15 @@ Value::Value (std::string _v) {
 }
 
 Value::Value (const Value& _v) {
+    type = _v.type;
+    switch (type) {
+    case DOUBLE: v.d = _v.v.d; break;
+    case BOOL: v.b = _v.v.b; break;
+    case STRING: v.s = strdup (_v.v.s); break;
+    }
+}
+
+void Value::operator= (Value _v) {
     type = _v.type;
     switch (type) {
     case DOUBLE: v.d = _v.v.d; break;

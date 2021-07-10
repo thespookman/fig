@@ -3,7 +3,7 @@
 %{
 #include <cstdlib>
 
-#include "config.h"
+#include "fig.h"
 #include "parser.tab.hh"
 
 #define YY_DECL int conflex(conf::parser::semantic_type *conflval, conf::parser::location_type *conflloc)

@@ -9,17 +9,8 @@ Building Fig requires Flex and Bison. Both are commonly included in Linux distro
 
 ## Build
 
-1. Download the repo.
 ```
-git clone https://github.com/thespookman/fig.git
-```
-2. Enter the repo.
-```
-cd fig
-```
-3. Build Fig.
-```
-make all
+git clone https://github.com/thespookman/fig.git && cd fig && make all
 ```
 
 ## Usage

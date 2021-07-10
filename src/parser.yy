@@ -5,7 +5,7 @@
 %locations
 
 %{
-#include "config.h"
+#include "fig.h"
 
 #include <cstdlib>
 #include <cstdio>

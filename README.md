@@ -23,6 +23,9 @@ make all
 ```
 
 ## Usage
+
+__see https://github.com/thespookman/scat for an example__
+
 Once the Config class has been instantiated, the `set` function can be used to set default values for keys. The `parse` function can then be used to parse a config file. Once that's done, the configured options can be accessed with the `get_bool`, `get_double`, `get_int` and `get_string` functions.  
 
 ## Config file format

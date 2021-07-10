@@ -165,6 +165,14 @@ int main (int argc, char** argv) {
     Config conf3;
     assert_reads_file (&conf3, "Throws when reading non-existant file", "config_3", false,
                        &passing);
+    Config conf4;
+    conf4.set ("int", 0);
+    conf4.set ("bool", true);
+    conf4.set ("string", "str");
+    assert_reads_file (&conf4, "Can overwrite preset values", "config_4", true, &passing);
+    assert_equals_int (&conf4, "Integer overwritten correctly", "int", 1, &passing);
+    assert_equals_bool (&conf4, "Boolean overwritten correctly", "bool", false, &passing);
+    assert_equals_string (&conf4, "String overwritten correctly", "string", "string", &passing);
     std::cout << std::endl;
     if (passing)
         std::cout << "\e[32mTests Passed\e[0m" << std::endl;
